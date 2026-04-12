@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Access Your Billionaire Blueprint | WealthPath</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg-deep:#0b0f1a; --bg-mid:#111827; --bg-card:#1a2236; --gold:#C9A84C; --gold-lt:#e2c16d; --white:#f0f4ff; --muted:#8a96b0; --border:rgba(201,168,76,0.18); --green:#2ecc71; }
+  *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg-deep); color:var(--white); font-family:'Barlow',sans-serif; min-height:100vh; display:flex; flex-direction:column; }
+  header { background:rgba(11,15,26,0.96); border-bottom:1px solid var(--border); padding:16px 48px; display:flex; align-items:center; justify-content:space-between; z-index:10; }
+  .logo-lockup { display:flex; align-items:center; gap:14px; text-decoration:none; }
+  .logo-img { height:52px; width:auto; display:block; }
+  .logo-text-col { display:flex; flex-direction:column; line-height:1; }
+  .logo-wordmark { font-family:'Bebas Neue',sans-serif; font-size:34px; letter-spacing:4px; color:var(--gold); }
+  .logo-byline { font-family:'Barlow Condensed',sans-serif; font-size:9px; letter-spacing:4px; text-transform:uppercase; color:var(--muted); margin-top:5px; }
+  .header-label { font-family:'Barlow Condensed',sans-serif; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--muted); }
+  main { flex:1; max-width:760px; margin:0 auto; padding:72px 24px 100px; width:100%; }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+  @keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.06)} }
+  .fade1{animation:fadeUp .5s ease both} .fade2{animation:fadeUp .5s .1s ease both} .fade3{animation:fadeUp .5s .2s ease both} .fade4{animation:fadeUp .5s .3s ease both}
+  .confirm-wrap { text-align:center; margin-bottom:56px; }
+  .check-circle { width:80px; height:80px; border-radius:50%; border:2px solid var(--green); display:inline-flex; align-items:center; justify-content:center; margin-bottom:28px; animation:pulse 2s ease 1; }
+  .check-circle svg { width:36px; height:36px; stroke:var(--green); stroke-width:2.5; fill:none; }
+  .confirm-eyebrow { font-family:'Barlow Condensed',sans-serif; font-size:11px; letter-spacing:4px; text-transform:uppercase; color:var(--green); margin-bottom:16px; }
+  .confirm-wrap h1 { font-family:'Bebas Neue',sans-serif; font-size:clamp(38px,7vw,64px); letter-spacing:2px; line-height:1.0; margin-bottom:18px; }
+  .confirm-wrap h1 em { color:var(--gold); font-style:normal; }
+  .confirm-wrap p { font-size:17px; line-height:1.75; color:var(--white); opacity:.82; max-width:540px; margin:0 auto; }
+  .welcome-card { background:linear-gradient(135deg,var(--bg-card) 0%,rgba(26,34,54,0.4) 100%); border:1px solid var(--border); padding:44px 40px; text-align:center; position:relative; overflow:hidden; margin-bottom:48px; }
+  .welcome-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,transparent,var(--gold),transparent); }
+  .welcome-card h2 { font-family:'Bebas Neue',sans-serif; font-size:clamp(28px,5vw,44px); letter-spacing:2px; margin-bottom:16px; }
+  .welcome-card h2 em { color:var(--gold); font-style:normal; }
+  .welcome-card p { font-size:16px; line-height:1.75; color:var(--white); opacity:.82; max-width:500px; margin:0 auto; }
+  .gold-rule { border:none; border-top:1px solid var(--border); margin:52px 0; }
+  .section-eyebrow { font-family:'Barlow Condensed',sans-serif; font-size:11px; letter-spacing:4px; text-transform:uppercase; color:var(--muted); margin-bottom:28px; }
+  .module-list { display:flex; flex-direction:column; gap:12px; }
+  .module-row { background:var(--bg-card); border:1px solid var(--border); display:flex; align-items:center; gap:20px; padding:20px 28px; text-decoration:none; transition:border-color .2s,background .2s; }
+  .module-row:hover { border-color:var(--gold); background:rgba(201,168,76,0.05); }
+  .module-num { font-family:'Bebas Neue',sans-serif; font-size:28px; color:var(--gold); line-height:1; min-width:36px; }
+  .module-info { flex:1; }
+  .module-info h3 { font-family:'Bebas Neue',sans-serif; font-size:20px; letter-spacing:2px; color:var(--white); margin-bottom:4px; }
+  .module-info p { font-size:13px; line-height:1.55; color:var(--muted); }
+  .module-arrow { color:var(--gold); font-size:20px; flex-shrink:0; }
+  footer { border-top:1px solid var(--border); padding:28px 48px; text-align:center; margin-top:52px; }
+  footer p { font-family:'Barlow Condensed',sans-serif; font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); }
+  @media(max-width:600px) {
+    header{padding:14px 20px} .logo-img{height:44px} .logo-wordmark{font-size:26px} .header-label{display:none}
+    main{padding:48px 16px 72px} .module-row{padding:16px 20px;gap:14px} .welcome-card{padding:32px 20px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo-lockup" href="#">
+    <img class="logo-img" src="wealthpath-logo.svg" alt="WealthPath">
+    <div class="logo-text-col">
+      <span class="logo-wordmark">WealthPath</span>
+      <span class="logo-byline">by J.C. Winthrop</span>
+    </div>
+  </a>
+  <span class="header-label">Blueprint Access</span>
+</header>
+
+<main>
+
+  <div class="confirm-wrap fade1">
+    <div class="check-circle">
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <p class="confirm-eyebrow">Payment Confirmed</p>
+    <h1>Welcome to The <em>Billionaire Blueprint</em></h1>
+    <p>All 8 modules are unlocked below. Start with Module 1 and work in sequence — each module builds on the last. This is the complete system.</p>
+  </div>
+
+  <div class="welcome-card fade2">
+    <h2>Start Here. <em>Work In Order.</em></h2>
+    <p>J.C. Winthrop built this system in sequence for a reason. The mindset foundation in Module 1 determines how fast everything else compounds. Don't skip ahead.</p>
+  </div>
+
+  <hr class="gold-rule fade3">
+  <p class="section-eyebrow fade3">Your 8 Modules — All Unlocked</p>
+
+  <div class="module-list fade4">
+    <a class="module-row" href="6-mindset.html">
+      <div class="module-num">01</div>
+      <div class="module-info">
+        <h3>The Sovereign Mindset</h3>
+        <p>Reprogram how you see money, wealth, and your own capacity — the foundation everything else is built on.</p>
+      </div>
+      <div class="module-arrow">→</div>
+    </a>
+    <a class="module-row" href="7-financial-options.html">
+      <div class="module-num">02</div>
+      <div class="module-info">
+        <h3>Financial Options & Vehicles</h3>
+        <p>Every tool available to you — accounts, instruments, structures — and which ones actually move the needle.</p>
+      </div>
+      <div class="module-arrow">→</div>
+    </a>
+    <a class="module-row" href="8-income-engine.html">
+      <div class="module-num">03</div>
+      <div class="module-info">
+        <h3>The Income Engine</h3>
+        <p>How to stack active and passive income streams so your money works harder than you do.</p>
+      </div>
+      <div class="module-arrow">→</div>
+    </a>
+    <a class="module-row" href="9-leverage.html">
+      <div class="module-num">04</div>
+      <div class="module-info">
+        <h3>Leverage & Capital Access</h3>
+        <p>Credit, debt, and OPM used the way wealthy people actually use them — as tools, not traps.</p>
+      </div>
+      <div class="module-arrow">→</div>
+    </a>
+    <a class="module-row" href="10-real-assets.html">
+      <div class="module-num">05</div>
+      <div class="module-info">
+        <h3>Real Assets</h3>
+        <p>Real estate, land, and hard assets — how to acquire, structure, and extract maximum value.</p>
+      </div>
+      <div class="module-arrow">→</div>
+    </a>
+    <a class="module-row" href="11-digital-assets.html">
+      <div class="module-num">06</div>
+      <div class="module-info">
+        <h3>Digital Assets & New Money</h3>
+        <p>Crypto, digital IP, and the emerging asset classes creating wealth outside the old system.</p>
+      </div>
+      <div class="module-arrow">→</div>
+    </a>
+    <a class="module-row" href="12-protection.html">
+      <div class="module-num">07</div>
+      <div class="module-info">
+        <h3>Protection & Legal Structure</h3>
+        <p>Entities, insurance, and the legal architecture that keeps what you build safe.</p>
+      </div>
+      <div class="module-arrow">→</div>
+    </a>
+    <a class="module-row" href="13-tax-strategy.html">
+      <div class="module-num">08</div>
+      <div class="module-info">
+        <h3>Tax Strategy & Elimination</h3>
+        <p>How to legally pay far less than the system expects, and keep more of everything you earn.</p>
+      </div>
+      <div class="module-arrow">→</div>
+    </a>
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2025 DMT International LLC &nbsp;·&nbsp; All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

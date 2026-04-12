@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 05: Real Assets | WealthPath</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg-deep:#0b0f1a; --bg-mid:#111827; --bg-card:#1a2236; --gold:#C9A84C; --gold-lt:#e2c16d; --white:#f0f4ff; --muted:#8a96b0; --border:rgba(201,168,76,0.18); }
+  *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg-deep); color:var(--white); font-family:'Barlow',sans-serif; min-height:100vh; display:flex; flex-direction:column; }
+  header { background:rgba(11,15,26,0.96); border-bottom:1px solid var(--border); padding:16px 48px; display:flex; align-items:center; justify-content:space-between; z-index:10; }
+  .logo-lockup { display:flex; align-items:center; gap:14px; text-decoration:none; }
+  .logo-img { height:52px; width:auto; display:block; }
+  .logo-text-col { display:flex; flex-direction:column; line-height:1; }
+  .logo-wordmark { font-family:'Bebas Neue',sans-serif; font-size:34px; letter-spacing:4px; color:var(--gold); }
+  .logo-byline { font-family:'Barlow Condensed',sans-serif; font-size:9px; letter-spacing:4px; text-transform:uppercase; color:var(--muted); margin-top:5px; }
+  .header-label { font-family:'Barlow Condensed',sans-serif; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--muted); }
+  main { flex:1; max-width:760px; margin:0 auto; padding:72px 24px 100px; width:100%; }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+  .fade1{animation:fadeUp .5s ease both} .fade2{animation:fadeUp .5s .1s ease both} .fade3{animation:fadeUp .5s .2s ease both} .fade4{animation:fadeUp .5s .3s ease both} .fade5{animation:fadeUp .5s .4s ease both}
+  .module-eyebrow { font-family:'Barlow Condensed',sans-serif; font-size:11px; letter-spacing:4px; text-transform:uppercase; color:var(--gold); margin-bottom:16px; }
+  .module-hero { margin-bottom:56px; }
+  .module-hero h1 { font-family:'Bebas Neue',sans-serif; font-size:clamp(42px,8vw,72px); letter-spacing:2px; line-height:1.0; margin-bottom:20px; }
+  .module-hero h1 em { color:var(--gold); font-style:normal; }
+  .module-hero p { font-size:18px; line-height:1.75; color:var(--white); opacity:.85; max-width:600px; }
+  .gold-rule { border:none; border-top:1px solid var(--border); margin:48px 0; }
+  .section-label { font-family:'Barlow Condensed',sans-serif; font-size:11px; letter-spacing:4px; text-transform:uppercase; color:var(--muted); margin-bottom:28px; }
+  .card-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:48px; }
+  .card { background:var(--bg-card); border:1px solid var(--border); padding:28px; }
+  .card .num { font-family:'Bebas Neue',sans-serif; font-size:36px; color:var(--gold); line-height:1; margin-bottom:10px; }
+  .card h3 { font-family:'Bebas Neue',sans-serif; font-size:18px; letter-spacing:2px; color:var(--white); margin-bottom:10px; }
+  .card p { font-size:14px; line-height:1.65; color:var(--muted); }
+  .full-card { background:var(--bg-card); border:1px solid var(--border); padding:36px 40px; margin-bottom:16px; position:relative; overflow:hidden; }
+  .full-card::before { content:''; position:absolute; left:0; top:0; bottom:0; width:3px; background:var(--gold); }
+  .full-card h3 { font-family:'Bebas Neue',sans-serif; font-size:20px; letter-spacing:2px; color:var(--white); margin-bottom:10px; }
+  .full-card p { font-size:15px; line-height:1.7; color:var(--muted); }
+  .action-block { background:linear-gradient(135deg,var(--bg-card),rgba(26,34,54,0.4)); border:1px solid var(--border); padding:44px 40px; text-align:center; position:relative; overflow:hidden; margin-top:52px; }
+  .action-block::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,transparent,var(--gold),transparent); }
+  .action-block h2 { font-family:'Bebas Neue',sans-serif; font-size:clamp(28px,5vw,44px); letter-spacing:2px; margin-bottom:16px; }
+  .action-block h2 em { color:var(--gold); font-style:normal; }
+  .action-block p { font-size:16px; line-height:1.75; color:var(--white); opacity:.82; max-width:500px; margin:0 auto 32px; }
+  .steps { list-style:none; text-align:left; max-width:440px; margin:0 auto 36px; display:flex; flex-direction:column; gap:14px; }
+  .steps li { font-size:15px; color:var(--white); opacity:.88; padding-left:28px; position:relative; line-height:1.5; }
+  .steps li::before { content:attr(data-n); position:absolute; left:0; color:var(--gold); font-family:'Bebas Neue',sans-serif; font-size:18px; }
+  .btn-next { display:inline-block; background:var(--gold); color:var(--bg-deep); font-family:'Bebas Neue',sans-serif; font-size:20px; letter-spacing:3px; padding:18px 52px; text-decoration:none; transition:background .2s,transform .15s; }
+  .btn-next:hover { background:var(--gold-lt); transform:translateY(-2px); }
+  .btn-back { display:block; margin-top:16px; font-family:'Barlow Condensed',sans-serif; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); text-decoration:none; }
+  .btn-back:hover { color:var(--white); }
+  footer { border-top:1px solid var(--border); padding:28px 48px; text-align:center; margin-top:auto; }
+  footer p { font-family:'Barlow Condensed',sans-serif; font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); }
+  @media(max-width:600px) {
+    header{padding:14px 20px} .logo-img{height:44px} .logo-wordmark{font-size:26px} .header-label{display:none}
+    main{padding:48px 16px 72px} .card-grid{grid-template-columns:1fr} .full-card{padding:28px 20px} .action-block{padding:36px 20px}
+  }
+</style>
+</head>
+<body>
+<header>
+  <a class="logo-lockup" href="#">
+    <img class="logo-img" src="wealthpath-logo.svg" alt="WealthPath">
+    <div class="logo-text-col">
+      <span class="logo-wordmark">WealthPath</span>
+      <span class="logo-byline">by J.C. Winthrop</span>
+    </div>
+  </a>
+  <span class="header-label">Module 05 of 8</span>
+</header>
+<main>
+  <div class="module-hero fade1">
+    <p class="module-eyebrow">Module 05 — The Billionaire Blueprint</p>
+    <h1><em>Real</em> Assets</h1>
+    <p>Most people think they own assets. They own liabilities with good marketing. This module defines what a real wealth-building asset actually is, how to identify the ones disguised as liabilities in your own portfolio, and how to acquire real assets without waiting until you 'have enough money.'</p>
+  </div>
+
+  <hr class="gold-rule fade2">
+  <p class="section-label fade2">What Qualifies as a Real Asset</p>
+  <div class="fade2"><div class="card-grid">
+  <div class="card"><div class="num">01</div><h3>Cash Flow Positive</h3><p>A real asset puts money in your pocket every month. If it costs you money to hold, it is not an asset — it is a liability with a different name. This is the first and most important filter.</p></div>
+  <div class="card"><div class="num">02</div><h3>Appreciating in Value</h3><p>Ideally, the asset also grows in value over time independent of your effort. Real estate, businesses, and certain alternative investments qualify. Your car does not.</p></div>
+  <div class="card"><div class="num">03</div><h3>Tax-Advantaged</h3><p>Real assets come with tax treatment that protects the income they generate. Depreciation, cost segregation, 1031 exchanges, and pass-through deductions are not loopholes — they are the rules wealthy people actually read.</p></div>
+  <div class="card"><div class="num">04</div><h3>Leverage-Friendly</h3><p>A real asset can be used as collateral to acquire more assets. Real estate, business equity, and investment portfolios can all be levered. Most consumer goods cannot.</p></div>
+</div>
+</div>
+
+  <hr class="gold-rule fade3">
+  <p class="section-label fade3">The Real Asset Acquisition Framework</p>
+  <div class="fade3"><div class="full-card"><h3>Start With What You Can Control</h3><p>Most first assets are acquired through direct control — a rental property, a business acquisition, a piece of raw land. These don't require institutional access. They require knowledge, a deal, and creative financing.</p></div>
+<div class="full-card"><h3>The Liability Audit</h3><p>Before acquiring new assets, audit what you currently own. A primary residence in an expensive market with a high mortgage may be consuming cash flow that should be going into income-producing assets. Know what each holding is actually doing for your balance sheet.</p></div>
+<div class="full-card"><h3>Seller Financing and Creative Structures</h3><p>The most powerful asset acquisition tool available to someone without large capital is seller financing. The seller becomes the bank. No institutional approval required. Terms are negotiated directly. Many of the best deals never hit the open market.</p></div>
+<div class="full-card"><h3>Land as an Underpriced Asset</h3><p>Raw land is one of the most misunderstood asset classes. No toilets, no tenants, no maintenance. Long-term appreciation, mineral rights potential, and subdivision opportunity. In the right markets — including Northern California — land at steep discounts to finished property value represents asymmetric upside.</p></div>
+</div>
+
+  <div class="action-block fade4">
+    <h2>Your <em>First Real Asset</em></h2>
+    <p>Three steps to your first acquisition.</p>
+    <ol class="steps"><li data-n="1">Complete the liability audit: list every 'asset' you own and identify which ones are cash flow positive.</li>
+<li data-n="2">Research one property, land parcel, or business in your market that could be acquired with seller financing.</li>
+<li data-n="3">Make contact. An inquiry costs nothing. A relationship started today is a deal closed in 90 days.</li>
+</ol>
+    <a class="btn-next" href="11-digital-assets.html">Continue to Module 06 →</a>
+    <a class="btn-back" href="9-leverage.html">← Back to Module 04</a>
+  </div>
+</main>
+<footer>
+  <p>© 2025 DMT International LLC &nbsp;·&nbsp; All Rights Reserved</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 04: Leverage & Capital Access | WealthPath</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg-deep:#0b0f1a; --bg-mid:#111827; --bg-card:#1a2236; --gold:#C9A84C; --gold-lt:#e2c16d; --white:#f0f4ff; --muted:#8a96b0; --border:rgba(201,168,76,0.18); }
+  *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg-deep); color:var(--white); font-family:'Barlow',sans-serif; min-height:100vh; display:flex; flex-direction:column; }
+  header { background:rgba(11,15,26,0.96); border-bottom:1px solid var(--border); padding:16px 48px; display:flex; align-items:center; justify-content:space-between; z-index:10; }
+  .logo-lockup { display:flex; align-items:center; gap:14px; text-decoration:none; }
+  .logo-img { height:52px; width:auto; display:block; }
+  .logo-text-col { display:flex; flex-direction:column; line-height:1; }
+  .logo-wordmark { font-family:'Bebas Neue',sans-serif; font-size:34px; letter-spacing:4px; color:var(--gold); }
+  .logo-byline { font-family:'Barlow Condensed',sans-serif; font-size:9px; letter-spacing:4px; text-transform:uppercase; color:var(--muted); margin-top:5px; }
+  .header-label { font-family:'Barlow Condensed',sans-serif; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--muted); }
+  main { flex:1; max-width:760px; margin:0 auto; padding:72px 24px 100px; width:100%; }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+  .fade1{animation:fadeUp .5s ease both} .fade2{animation:fadeUp .5s .1s ease both} .fade3{animation:fadeUp .5s .2s ease both} .fade4{animation:fadeUp .5s .3s ease both} .fade5{animation:fadeUp .5s .4s ease both}
+  .module-eyebrow { font-family:'Barlow Condensed',sans-serif; font-size:11px; letter-spacing:4px; text-transform:uppercase; color:var(--gold); margin-bottom:16px; }
+  .module-hero { margin-bottom:56px; }
+  .module-hero h1 { font-family:'Bebas Neue',sans-serif; font-size:clamp(42px,8vw,72px); letter-spacing:2px; line-height:1.0; margin-bottom:20px; }
+  .module-hero h1 em { color:var(--gold); font-style:normal; }
+  .module-hero p { font-size:18px; line-height:1.75; color:var(--white); opacity:.85; max-width:600px; }
+  .gold-rule { border:none; border-top:1px solid var(--border); margin:48px 0; }
+  .section-label { font-family:'Barlow Condensed',sans-serif; font-size:11px; letter-spacing:4px; text-transform:uppercase; color:var(--muted); margin-bottom:28px; }
+  .card-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:48px; }
+  .card { background:var(--bg-card); border:1px solid var(--border); padding:28px; }
+  .card .num { font-family:'Bebas Neue',sans-serif; font-size:36px; color:var(--gold); line-height:1; margin-bottom:10px; }
+  .card h3 { font-family:'Bebas Neue',sans-serif; font-size:18px; letter-spacing:2px; color:var(--white); margin-bottom:10px; }
+  .card p { font-size:14px; line-height:1.65; color:var(--muted); }
+  .full-card { background:var(--bg-card); border:1px solid var(--border); padding:36px 40px; margin-bottom:16px; position:relative; overflow:hidden; }
+  .full-card::before { content:''; position:absolute; left:0; top:0; bottom:0; width:3px; background:var(--gold); }
+  .full-card h3 { font-family:'Bebas Neue',sans-serif; font-size:20px; letter-spacing:2px; color:var(--white); margin-bottom:10px; }
+  .full-card p { font-size:15px; line-height:1.7; color:var(--muted); }
+  .action-block { background:linear-gradient(135deg,var(--bg-card),rgba(26,34,54,0.4)); border:1px solid var(--border); padding:44px 40px; text-align:center; position:relative; overflow:hidden; margin-top:52px; }
+  .action-block::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,transparent,var(--gold),transparent); }
+  .action-block h2 { font-family:'Bebas Neue',sans-serif; font-size:clamp(28px,5vw,44px); letter-spacing:2px; margin-bottom:16px; }
+  .action-block h2 em { color:var(--gold); font-style:normal; }
+  .action-block p { font-size:16px; line-height:1.75; color:var(--white); opacity:.82; max-width:500px; margin:0 auto 32px; }
+  .steps { list-style:none; text-align:left; max-width:440px; margin:0 auto 36px; display:flex; flex-direction:column; gap:14px; }
+  .steps li { font-size:15px; color:var(--white); opacity:.88; padding-left:28px; position:relative; line-height:1.5; }
+  .steps li::before { content:attr(data-n); position:absolute; left:0; color:var(--gold); font-family:'Bebas Neue',sans-serif; font-size:18px; }
+  .btn-next { display:inline-block; background:var(--gold); color:var(--bg-deep); font-family:'Bebas Neue',sans-serif; font-size:20px; letter-spacing:3px; padding:18px 52px; text-decoration:none; transition:background .2s,transform .15s; }
+  .btn-next:hover { background:var(--gold-lt); transform:translateY(-2px); }
+  .btn-back { display:block; margin-top:16px; font-family:'Barlow Condensed',sans-serif; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); text-decoration:none; }
+  .btn-back:hover { color:var(--white); }
+  footer { border-top:1px solid var(--border); padding:28px 48px; text-align:center; margin-top:auto; }
+  footer p { font-family:'Barlow Condensed',sans-serif; font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); }
+  @media(max-width:600px) {
+    header{padding:14px 20px} .logo-img{height:44px} .logo-wordmark{font-size:26px} .header-label{display:none}
+    main{padding:48px 16px 72px} .card-grid{grid-template-columns:1fr} .full-card{padding:28px 20px} .action-block{padding:36px 20px}
+  }
+</style>
+</head>
+<body>
+<header>
+  <a class="logo-lockup" href="#">
+    <img class="logo-img" src="wealthpath-logo.svg" alt="WealthPath">
+    <div class="logo-text-col">
+      <span class="logo-wordmark">WealthPath</span>
+      <span class="logo-byline">by J.C. Winthrop</span>
+    </div>
+  </a>
+  <span class="header-label">Module 04 of 8</span>
+</header>
+<main>
+  <div class="module-hero fade1">
+    <p class="module-eyebrow">Module 04 — The Billionaire Blueprint</p>
+    <h1>Leverage & <em>Capital Access</em></h1>
+    <p>The wealthy don't use their own money — they use leverage. Other people's capital, other people's time, other people's distribution. This module breaks down every form of leverage available to you and shows you how to start using it today, regardless of your current net worth.</p>
+  </div>
+
+  <hr class="gold-rule fade2">
+  <p class="section-label fade2">4 Forms of Leverage</p>
+  <div class="fade2"><div class="card-grid">
+  <div class="card"><div class="num">01</div><h3>Financial Leverage</h3><p>Using borrowed capital to acquire assets worth more than the debt. Real estate, business acquisition, investment lines. When the asset earns more than the debt costs, you've printed wealth.</p></div>
+  <div class="card"><div class="num">02</div><h3>Time Leverage</h3><p>Systems, teams, automation, and delegation that multiply your productive hours. One person running leverage is worth 10 people running effort alone.</p></div>
+  <div class="card"><div class="num">03</div><h3>Knowledge Leverage</h3><p>Expertise that commands premium pricing and attracts others' capital. The more specific and scarce your knowledge, the more leverage it creates.</p></div>
+  <div class="card"><div class="num">04</div><h3>Network Leverage</h3><p>Access, introductions, deal flow, and distribution through relationships. The right network opens doors that capital alone cannot buy.</p></div>
+</div>
+</div>
+
+  <hr class="gold-rule fade3">
+  <p class="section-label fade3">Good Debt vs. Bad Debt</p>
+  <div class="fade3"><div class="full-card"><h3>Good Debt — Assets That Pay</h3><p>A loan on a rental property that generates more cash flow than it costs. A business line that funds inventory generating 3x return. Good debt is a tool with a positive ROI. The asset services the debt and produces surplus.</p></div>
+<div class="full-card"><h3>Bad Debt — Liabilities That Drain</h3><p>Credit cards on depreciating goods. Car loans on vehicles losing value daily. Consumer financing on lifestyle purchases. Bad debt transfers your future income to someone else's asset column.</p></div>
+<div class="full-card"><h3>Credit as a Capital Stack</h3><p>Business credit, personal credit, and private lending are three separate stacks that can be built simultaneously. A well-structured credit profile is a $500K+ capital reserve that costs nothing if unused and produces assets when deployed correctly.</p></div>
+<div class="full-card"><h3>OPM — Other People's Money</h3><p>Joint ventures, private investors, seller financing, and partnership structures. You bring the deal, the system, or the expertise. They bring the capital. Both win. This is how real estate and business acquisition happen without personal savings.</p></div>
+</div>
+
+  <div class="action-block fade4">
+    <h2>Access Capital <em>This Month</em></h2>
+    <p>Three moves. Execute in order.</p>
+    <ol class="steps"><li data-n="1">Pull your credit reports from all three bureaus. Know your current score and every negative item.</li>
+<li data-n="2">Open a business checking account under your LLC if you haven't already. EIN-only credit starts here.</li>
+<li data-n="3">Identify one asset you could acquire using leverage — seller financing, private money, or business credit.</li>
+</ol>
+    <a class="btn-next" href="10-real-assets.html">Continue to Module 05 →</a>
+    <a class="btn-back" href="8-income-engine.html">← Back to Module 03</a>
+  </div>
+</main>
+<footer>
+  <p>© 2025 DMT International LLC &nbsp;·&nbsp; All Rights Reserved</p>
+</footer>
+</body>
+</html>

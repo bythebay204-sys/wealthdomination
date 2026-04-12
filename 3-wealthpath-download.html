@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your WealthPath Workbook Is Ready | WealthPath</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-deep:  #0b0f1a;
+    --bg-mid:   #111827;
+    --bg-card:  #1a2236;
+    --gold:     #C9A84C;
+    --gold-lt:  #e2c16d;
+    --white:    #f0f4ff;
+    --muted:    #8a96b0;
+    --border:   rgba(201,168,76,0.18);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg-deep);
+    color: var(--white);
+    font-family: 'Barlow', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* HEADER */
+  header {
+    background: rgba(11,15,26,0.96);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo-lockup { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+  .logo-img { height: 52px; width: auto; display: block; }
+  .logo-text-col { display: flex; flex-direction: column; line-height: 1; }
+  .logo-wordmark { font-family: 'Bebas Neue', sans-serif; font-size: 34px; letter-spacing: 4px; color: var(--gold); }
+  .logo-byline { font-family: 'Barlow Condensed', sans-serif; font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: var(--muted); margin-top: 5px; }
+  .header-label { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); }
+
+  /* LAYOUT */
+  main { flex: 1; max-width: 680px; margin: 0 auto; padding: 72px 24px 100px; width: 100%; }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+  .fade1 { animation: fadeUp .5s ease both; }
+  .fade2 { animation: fadeUp .5s .12s ease both; }
+  .fade3 { animation: fadeUp .5s .24s ease both; }
+  .fade4 { animation: fadeUp .5s .36s ease both; }
+  .fade5 { animation: fadeUp .5s .48s ease both; }
+
+  /* CONFIRMATION BADGE */
+  .confirm-wrap { text-align: center; margin-bottom: 52px; }
+  .check-circle {
+    width: 72px; height: 72px;
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    margin-bottom: 24px;
+  }
+  .check-circle svg { width: 32px; height: 32px; }
+  .confirm-eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+  .confirm-wrap h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(36px, 7vw, 58px); letter-spacing: 2px; line-height: 1.05; margin-bottom: 16px; }
+  .confirm-wrap h1 em { color: var(--gold); font-style: normal; }
+  .confirm-wrap p { font-size: 17px; line-height: 1.75; color: var(--white); opacity: .82; max-width: 520px; margin: 0 auto; }
+
+  /* DOWNLOAD CARD */
+  .download-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 40px;
+    margin-bottom: 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .download-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .download-card-inner { display: flex; align-items: center; gap: 32px; }
+  .download-icon {
+    flex-shrink: 0;
+    width: 64px; height: 80px;
+    background: rgba(201,168,76,0.08);
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .download-icon svg { width: 28px; height: 28px; }
+  .download-info { flex: 1; }
+  .download-info h3 { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 2px; color: var(--white); margin-bottom: 6px; }
+  .download-info p { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); }
+  .btn-download {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--bg-deep);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 3px;
+    padding: 16px 36px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background .2s, transform .15s;
+  }
+  .btn-download:hover { background: var(--gold-lt); transform: translateY(-1px); }
+
+  /* WHAT'S INSIDE */
+  .gold-rule { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  .section-label { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--muted); margin-bottom: 28px; }
+  .modules-grid { display: flex; flex-direction: column; gap: 16px; margin-bottom: 48px; }
+  .module-row {
+    display: flex; align-items: flex-start; gap: 20px;
+    padding: 22px 24px;
+    background: var(--bg-mid);
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+  .module-num { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--gold); opacity: .4; line-height: 1; flex-shrink: 0; width: 28px; }
+  .module-text h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 15px; letter-spacing: 2px; text-transform: uppercase; color: var(--white); margin-bottom: 4px; }
+  .module-text p { font-size: 14px; line-height: 1.6; color: var(--muted); }
+
+  /* UPSELL */
+  .upsell-block {
+    background: linear-gradient(135deg, var(--bg-card) 0%, rgba(26,34,54,0.5) 100%);
+    border: 1px solid var(--border);
+    padding: 48px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .upsell-block::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .upsell-eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+  .upsell-block h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 5vw, 44px); letter-spacing: 2px; line-height: 1.05; margin-bottom: 18px; }
+  .upsell-block h2 em { color: var(--gold); font-style: normal; }
+  .upsell-block p { font-size: 16px; line-height: 1.75; color: var(--white); opacity: .82; max-width: 480px; margin: 0 auto 32px; }
+  .upsell-price { margin-bottom: 28px; }
+  .upsell-price .was { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); text-decoration: line-through; margin-bottom: 4px; }
+  .upsell-price .now { font-family: 'Bebas Neue', sans-serif; font-size: 52px; color: var(--gold); line-height: 1; letter-spacing: 2px; }
+  .upsell-price .now sup { font-size: 24px; vertical-align: super; }
+  .btn-upsell {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--bg-deep);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 3px;
+    padding: 18px 52px;
+    text-decoration: none;
+    transition: background .2s, transform .15s;
+    width: 100%; max-width: 420px;
+  }
+  .btn-upsell:hover { background: var(--gold-lt); transform: translateY(-2px); }
+  .upsell-sub { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-top: 16px; }
+  .upsell-bullets { list-style: none; text-align: left; max-width: 380px; margin: 0 auto 32px; display: flex; flex-direction: column; gap: 10px; }
+  .upsell-bullets li { font-size: 15px; color: var(--white); opacity: .84; padding-left: 20px; position: relative; line-height: 1.5; }
+  .upsell-bullets li::before { content: '—'; position: absolute; left: 0; color: var(--gold); }
+
+  /* FOOTER */
+  footer { border-top: 1px solid var(--border); padding: 28px 48px; text-align: center; }
+  footer p { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    header { padding: 14px 20px; }
+    .logo-img { height: 44px; }
+    .logo-wordmark { font-size: 26px; }
+    .header-label { display: none; }
+    main { padding: 48px 16px 72px; }
+    .download-card-inner { flex-direction: column; gap: 20px; }
+    .btn-download { width: 100%; text-align: center; }
+    .download-card { padding: 28px 24px; }
+    .upsell-block { padding: 36px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo-lockup" href="#">
+    <img class="logo-img" src="wealthpath-logo.svg" alt="WealthPath">
+    <div class="logo-text-col">
+      <span class="logo-wordmark">WealthPath</span>
+      <span class="logo-byline">by J.C. Winthrop · DMT International</span>
+    </div>
+  </a>
+  <span class="header-label">Member Access</span>
+</header>
+
+<main>
+
+  <!-- CONFIRMATION -->
+  <section class="confirm-wrap fade1">
+    <div class="check-circle">
+      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polyline points="6,17 13,24 26,9" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <p class="confirm-eyebrow">Payment Confirmed</p>
+    <h1>Your <em>WealthPath Workbook</em><br>Is Ready</h1>
+    <p>Download your copy below and start your Wealth Audit today. Work through Section 1 in the next 24 hours — that one step alone changes the trajectory.</p>
+  </section>
+
+  <!-- DOWNLOAD -->
+  <div class="download-card fade2">
+    <div class="download-card-inner">
+      <div class="download-icon">
+        <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14 4v14M8 13l6 6 6-6" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M4 22h20" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="download-info">
+        <h3>WealthPath Wealth Audit Workbook</h3>
+        <p>PDF · Instant Access · J.C. Winthrop / DMT International</p>
+      </div>
+      <a class="btn-download" href="WealthPath_Wealth_Audit_Workbook.pdf" download>Download →</a>
+    </div>
+  </div>
+
+  <!-- WHAT'S INSIDE -->
+  <section class="fade3">
+    <p class="section-label">What You Just Unlocked</p>
+    <div class="modules-grid">
+      <div class="module-row">
+        <span class="module-num">01</span>
+        <div class="module-text">
+          <h4>The Wealth Audit Framework</h4>
+          <p>Map every dollar, asset, liability, and income stream in one place — your complete financial snapshot.</p>
+        </div>
+      </div>
+      <div class="module-row">
+        <span class="module-num">02</span>
+        <div class="module-text">
+          <h4>Income & Cash Flow Analysis</h4>
+          <p>Identify exactly where your money goes and where hidden income is sitting dormant.</p>
+        </div>
+      </div>
+      <div class="module-row">
+        <span class="module-num">03</span>
+        <div class="module-text">
+          <h4>Debt Elimination Sequence</h4>
+          <p>The paydown order that frees up the most capital the fastest — not the conventional advice.</p>
+        </div>
+      </div>
+      <div class="module-row">
+        <span class="module-num">04</span>
+        <div class="module-text">
+          <h4>First Asset Acquisition Plan</h4>
+          <p>How to acquire your first real income-producing asset regardless of where you're starting.</p>
+        </div>
+      </div>
+      <div class="module-row">
+        <span class="module-num">05</span>
+        <div class="module-text">
+          <h4>90-Day Wealth Action Roadmap</h4>
+          <p>A specific, sequenced plan for the next 90 days based on your Wealth Score tier.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="gold-rule fade3">
+
+  <!-- UPSELL → BLUEPRINT $97 -->
+  <div class="upsell-block fade4">
+    <p class="upsell-eyebrow">One-Time Offer — This Page Only</p>
+    <h2>Add the Full <em>Billionaire Blueprint</em><br>for Just $97</h2>
+    <p>The Workbook gives you the audit. The Blueprint gives you the complete 8-module wealth-building system — entities, leverage, passive income, tax strategy, digital assets, and your full exit architecture. One price. No upsells after this.</p>
+    <ul class="upsell-bullets">
+      <li>8 complete wealth-building modules (full system)</li>
+      <li>Entity structure + holding company templates</li>
+      <li>Passive income engine — built to run without you</li>
+      <li>Tax elimination strategies for every income level</li>
+      <li>Digital asset and credit leverage frameworks</li>
+      <li>Legacy and exit architecture</li>
+    </ul>
+    <div class="upsell-price">
+      <p class="was">Regular Price: $197</p>
+      <p class="now"><sup>$</sup>97</p>
+    </div>
+    <a class="btn-upsell" href="https://buy.stripe.com/dRm8wPcUf0LbSw96Raa3u02">Add the Blueprint Now →</a>
+    <p class="upsell-sub">30-Day Guarantee · Instant Access · One-Time Offer</p>
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2025 DMT International LLC &nbsp;·&nbsp; All Rights Reserved &nbsp;·&nbsp; Questions? <a href="mailto:support@wealthdomination.com" style="color:var(--muted);">support@wealthdomination.com</a></p>
+</footer>
+
+</body>
+</html>
