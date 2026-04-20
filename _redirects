@@ -1,0 +1,5 @@
+# WealthPath — route fixes
+# Fixes Stripe success_url 404 by routing /thanks to the existing thank-you.html
+/thanks      /thank-you.html    301!
+/success     /thank-you.html    301!
+/thankyou    /thank-you.html    301!
